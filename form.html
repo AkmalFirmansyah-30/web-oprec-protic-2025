@@ -1,168 +1,184 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROTIC - Formulir Pendaftaran</title>
-  <link rel="stylesheet" href="form.css">
-</head>
-<body>
-<section class="registration-section">
-  <header class="header">
-  <img src="img/header.png" alt="PROTIC Header" class="header-image"/>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROTIC - Formulir Pendaftaran</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <section class="registration-section">
+      <header class="header">
+        <img src="img/header.png" alt="PROTIC Header" class="header-image" />
+      </header>
 
-  <div class="form-title-section">
-    <h2 class="form-title">FORMULIR PENDAFTARAN</h2>
-    <p class="form-subtitle">Pengurus Protic tahun 2025/2026</p>
-    <div class="form-divider"></div>
-  </div>
+      <div class="form-title-section">
+        <h2 class="form-title">FORMULIR PENDAFTARAN</h2>
+        <p class="form-subtitle">Pengurus Protic tahun 2025/2026</p>
+        <div class="form-divider"></div>
+      </div>
 
-  <form class="registration-form">
-    <div class="form-section">
-      <div class="section-header">
-        <h3 class="section-title">BIODATA</h3>
-      </div>
-      
-      <div class="form-group">
-        <label for="fullname" class="form-label">Nama Lengkap</label>
-        <input type="text" id="fullname" name="fullname" class="form-input" required />
-      </div>
-      
-      <div class="form-group">
-        <label for="npm" class="form-label">NPM</label>
-        <input type="text" id="npm" name="npm" class="form-input" required />
-      </div>
-      
-      <div class="form-group">
-        <label for="class" class="form-label">Kelas</label>
-        <input type="text" id="class" name="class" class="form-input" required />
-      </div>
-      
-      <div class="form-group">
-        <label for="semester" class="form-label">Semester</label>
-        <input type="text" id="semester" name="semester" class="form-input" required />
-      </div>
-    </div>
-
-    <div class="form-section">
-      <div class="section-header">
-        <h3 class="section-title">PILIHAN DIVISI</h3>
-      </div>
-      <p class="division-instruction">Pilih 2 Divisi yang sesuai dengan minat dan bakatmu!</p>
-      
-      <div class="division-grid">
-        <div class="division-row">
-          <button type="button" class="division-btn" data-division="web">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/2wRd0NkiPC.svg" alt="Web Icon" />
-            <span>WEB</span>
-          </button>
-          <button type="button" class="division-btn" data-division="uiux">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/5QYw9fJ0Dv.svg" alt="UI/UX Icon" />
-            <span>UI/UX</span>
-          </button>
-          <button type="button" class="division-btn" data-division="mobile">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/Ru7ofTsZ01.svg" alt="Mobile Icon" />
-            <span>MOBILE</span>
-          </button>
-        </div>
-        
-        <div class="division-row">
-          <button type="button" class="division-btn" data-division="devops">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/9KvVK907WE.svg" alt="DevOps Icon" />
-            <span>DEVOPS</span>
-          </button>
-          <button type="button" class="division-btn" data-division="data">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/okFG8MFb6J.svg" alt="Data Icon" />
-            <span>DATA</span>
-          </button>
-          <button type="button" class="division-btn" data-division="humas">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/S6AxhhJXhe.svg" alt="Humas Icon" />
-            <span>HUMAS</span>
-          </button>
-        </div>
-        
-        <div class="division-row">
-          <button type="button" class="division-btn" data-division="sekretaris">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/AmZqOhsEu4.svg" alt="Secretary Icon" />
-            <span class="small-text">Sekretaris</span>
-          </button>
-          <button type="button" class="division-btn" data-division="kominfo">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/DGbzu2rwTt.svg" alt="Kominfo Icon" />
-            <span class="small-text">KOMINFO</span>
-          </button>
-          <button type="button" class="division-btn" data-division="bendahara">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/EnGoqzghLg.svg" alt="Treasurer Icon" />
-            <span class="small-text">BENDAHARA</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-section">
-      <div class="section-header">
-        <h3 class="section-title">BERKAS</h3>
-      </div>
-      
-      <div class="form-group">
-        <label for="cv" class="form-label">Curriculum Vitae (CV)</label>
-        <div class="file-upload">
-          <div class="upload-icon">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/QZ09zLO3EG.svg" alt="Upload Icon" />
+      <form id="registrationForm" class="registration-form">
+        <!-- BIODATA -->
+        <div class="form-section">
+          <div class="section-header">
+            <h3 class="section-title">BIODATA</h3>
           </div>
-          <button type="button" class="upload-btn">Unggah File</button>
-          <p class="file-info">file harus berjenis PDF dan maksimal ukuran 2MB</p>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <label for="portfolio" class="form-label">Portofolio</label>
-        <input type="url" id="portfolio" name="portfolio" class="form-input" placeholder="https://drive.google.com/your-portfolio-link" />
-      </div>
-      
-      <div class="form-group">
-        <label for="whatsapp" class="form-label">Nomor Whatsapp</label>
-        <input type="tel" id="whatsapp" name="whatsapp" class="form-input" placeholder="08xxxxxxxxx" required />
-      </div>
-      
-      <div class="form-group">
-        <label for="email" class="form-label">Email Aktif</label>
-        <input type="email" id="email" name="email" class="form-input" required />
-      </div>
-      
-      <div class="form-divider"></div>
-      
-      <button type="submit" class="submit-btn">Kirim</button>
-    </div>
-  </form>
 
-  <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-main">
-          <div class="footer-logo">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/pOR1YyEsWN.png" alt="PROTIC Logo" />
+          <div class="form-group">
+            <label for="fullname" class="form-label">Nama Lengkap</label>
+            <input type="text" id="fullname" name="fullname" class="form-input" required />
           </div>
-          <div class="footer-text">
-            <h3 class="footer-title">PROTIC</h3>
-            <p class="footer-subtitle">Programming Technology Informatics Club</p>
+
+          <div class="form-group">
+            <label for="npm" class="form-label">NPM</label>
+            <input type="text" id="npm" name="npm" class="form-input" required />
+          </div>
+
+          <div class="form-group">
+            <label for="class" class="form-label">Kelas</label>
+            <input type="text" id="class" name="class" class="form-input" required />
+          </div>
+
+          <div class="form-group">
+            <label for="semester" class="form-label">Semester</label>
+            <input type="text" id="semester" name="semester" class="form-input" required />
           </div>
         </div>
-        <div class="footer-divider"></div>
-        <div class="footer-social">
-          <a href="#" aria-label="Instagram" class="social-link">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/Qo58fybJYO.svg" alt="Instagram" />
-          </a>
-          <a href="#" aria-label="Facebook" class="social-link">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/yXf9Fjhke2.svg" alt="Facebook" />
-          </a>
-          <a href="#" aria-label="Twitter" class="social-link">
-            <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-09-08/9QMxDqPuf8.svg" alt="Twitter" />
-          </a>
+
+        <!-- PILIHAN DIVISI -->
+        <div class="form-section">
+          <div class="section-header">
+            <h3 class="section-title">PILIHAN DIVISI</h3>
+          </div>
+          <p class="division-instruction">Pilih 2 Divisi yang sesuai dengan minat dan bakatmu!</p>
+
+          <div class="division-grid">
+            <div class="division-row">
+              <button type="button" class="division-btn" data-division="WEB">WEB</button>
+              <button type="button" class="division-btn" data-division="UI/UX">UI/UX</button>
+              <button type="button" class="division-btn" data-division="MOBILE">MOBILE</button>
+            </div>
+            <div class="division-row">
+              <button type="button" class="division-btn" data-division="DEVOPS">DEVOPS</button>
+              <button type="button" class="division-btn" data-division="DATA">DATA</button>
+              <button type="button" class="division-btn" data-division="HUMAS">HUMAS</button>
+            </div>
+            <div class="division-row">
+              <button type="button" class="division-btn" data-division="SEKRETARIS">
+                SEKRETARIS
+              </button>
+              <button type="button" class="division-btn" data-division="KOMINFO">KOMINFO</button>
+              <button type="button" class="division-btn" data-division="BENDAHARA">
+                BENDAHARA
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-      <p class="footer-copyright">© 2025 Protic | All Right Reserved</p>
-    </footer>
-</section>
-<script src="script.js" defer></script>
-</body>
+
+        <!-- BERKAS -->
+        <div class="form-section">
+          <div class="section-header">
+            <h3 class="section-title">BERKAS</h3>
+          </div>
+
+          <div class="form-group">
+            <label for="portfolio" class="form-label">Portofolio</label>
+            <input
+              type="url"
+              id="portfolio"
+              name="portfolio"
+              class="form-input"
+              placeholder="https://drive.google.com/your-portfolio-link"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp" class="form-label">Nomor Whatsapp</label>
+            <input
+              type="tel"
+              id="whatsapp"
+              name="whatsapp"
+              class="form-input"
+              placeholder="08xxxxxxxxx"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email Aktif</label>
+            <input type="email" id="email" name="email" class="form-input" required />
+          </div>
+
+          <div class="form-divider"></div>
+
+          <button type="submit" class="submit-btn">Kirim</button>
+        </div>
+      </form>
+
+      <footer class="footer">
+        <p class="footer-copyright">© 2025 Protic | All Right Reserved</p>
+      </footer>
+    </section>
+
+    <!-- SCRIPT -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxPXP-SG8DzCrO-xe-j-eVgPndQYLILmJJl53G2R8bnclthyJ7pR0N65qgjhry-3yPNOg/exec'
+      const form = document.getElementById('registrationForm')
+
+      let selectedDivisions = []
+
+      document.querySelectorAll('.division-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const division = btn.dataset.division
+          if (selectedDivisions.includes(division)) {
+            // batalin pilihan
+            selectedDivisions = selectedDivisions.filter((d) => d !== division)
+            btn.classList.remove('active')
+          } else {
+            if (selectedDivisions.length < 2) {
+              selectedDivisions.push(division)
+              btn.classList.add('active')
+            } else {
+              alert('Kamu hanya boleh memilih 2 divisi!')
+            }
+          }
+        })
+      })
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        if (selectedDivisions.length !== 2) {
+          alert('Harap pilih tepat 2 divisi!')
+          return
+        }
+
+        const formData = {
+          fullname: form.fullname.value,
+          npm: form.npm.value,
+          class: form.class.value,
+          semester: form.semester.value,
+          division1: selectedDivisions[0],
+          division2: selectedDivisions[1],
+          portfolio: form.portfolio.value,
+          whatsapp: form.whatsapp.value,
+          email: form.email.value,
+        }
+
+        fetch(scriptURL, {
+          method: 'POST',
+          body: JSON.stringify(formData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            alert('Data berhasil dikirim!')
+            form.reset()
+            selectedDivisions = []
+            document.querySelectorAll('.division-btn').forEach((b) => b.classList.remove('active'))
+          })
+          .catch((err) => console.error('Error!', err.message))
+      })
+    </script>
+  </body>
 </html>
