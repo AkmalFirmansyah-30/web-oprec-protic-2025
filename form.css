@@ -82,6 +82,9 @@ body {
   background-color: var(--background-dark);
   color: var(--text-white);
   line-height: 1.5;
+  max-width: 648px;
+  margin: 0 auto;      
+  display: block;     
 }
 
 a {
@@ -240,15 +243,16 @@ img {
   }
   
   .division-grid {
+  max-width: 648px;
   display: flex;
   flex-direction: column;
-  gap: 57px;
+  gap: 68px;
   }
   
   .division-row {
   display: flex;
   justify-content: space-between;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   }
   
   .division-btn {
@@ -268,15 +272,17 @@ img {
   transition: all 0.3s ease;
   color: var(--text-white);
   font-family: 'Poppins', sans-serif;
+  transform: scale(1.5);
   }
   
   .division-btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-green), 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.6);
   }
   
   .division-btn:focus {
-  outline: 2px solid var(--accent-green);
+  /* outline: 2px solid var(--accent-green); */
   outline-offset: 2px;
   }
   
@@ -392,7 +398,7 @@ img {
 
 /* === FOOTER === */
 .footer {
-  width: 100vw; /* full viewport width */
+  width: 100%; /* full viewport width */
   min-height: 147px;
   background: linear-gradient(180deg, var(--dark-green) 25%, #3DA86C 88%);
   border-top: 1px solid;
@@ -477,7 +483,10 @@ img {
 }
 
 .division-btn.active {
-  border: 2px solid #3BAE6D; /* hijau highlight */
-  background-color: rgba(59, 174, 109, 0.1);
-  transform: scale(1.05);
+  border: 2px solid var(--primary-green); /* hijau tegas */
+  /* background: linear-gradient(180deg, #2AAC63 2.31%, var(--darker-green) 80%, var(--darker-green) 60%, var(--darker-green) 50%); */
+  background: linear-gradient(180deg, #2AAC63 , #06291E 80%);
+  color: #fff;
+  transform: scale(1.6);
+  box-shadow: 0 0 12px rgba(59, 174, 109, 0.7);
 }

@@ -82,6 +82,9 @@ body {
   background-color: var(--background-dark);
   color: var(--text-white);
   line-height: 1.5;
+  max-width: 648px;
+  margin: 0 auto;      
+  display: block;      
 }
 
 a {
@@ -226,8 +229,8 @@ img {
   
   /* border + gradient mirip about-card */
   background: linear-gradient(180deg, var(--accent-green) 0%, var(--medium-dark-green) 52%, var(--dark-green) 100%);
-  border: 1px solid;
-  border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1;
+  border: 1px solid var(--dark-green);
+  /* border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1; */
   box-shadow: var(--shadow-green);
   padding: 3px; /* biar ada ruang antara gambar & border */
 }
@@ -247,8 +250,8 @@ img {
   height: 40px;
   border-radius: var(--radius-xl);
   background: linear-gradient(180deg, var(--lighter-green) 0%, #23824C 100%);
-  border: 1px solid;
-  border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1;
+  border: 1px solid var(--dark-green);
+  /* border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1; */
   box-shadow: var(--shadow-button);
   color: var(--text-white);
   font-family: 'Poppins', sans-serif;
@@ -281,8 +284,8 @@ img {
 .about-card {
   width: 347px;
   background: linear-gradient(180deg, var(--accent-green) 0%, var(--medium-dark-green) 52%, var(--dark-green) 100%);
-  border: 1px solid;
-  border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1;
+  border: 1px solid var(--dark-green);
+  /* border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1; */
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-green);
   padding: var(--spacing-3xl) var(--spacing-sm);
@@ -316,7 +319,7 @@ img {
   padding: var(--spacing-4xl) var(--spacing-xl);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 35px;
   z-index: 1;
 }
@@ -348,8 +351,8 @@ img {
 .division-card {
   width: 347px;
   background: linear-gradient(180deg, var(--accent-green) 0%, var(--medium-dark-green) 52%, var(--dark-green) 100%);
-  border: 1px solid;
-  border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1;
+  border: 1px solid var(--dark-green);
+  /* border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1; */
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-green-strong);
   padding: var(--spacing-lg) var(--spacing-xl);
@@ -394,8 +397,8 @@ img {
   width: 80px;
   height: 80px;
   background: linear-gradient(180deg, var(--medium-dark-green) 42%, var(--darker-green) 100%);
-  border: 1px solid;
-  border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1;
+  border: 1px solid var(--dark-green);
+  /* border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1; */
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-green);
   display: flex;
@@ -427,8 +430,8 @@ img {
 .item-description {
   flex: 1;
   background: linear-gradient(180deg, var(--medium-dark-green) 42%, var(--dark-green) 100%);
-  border: 1px solid;
-  border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1;
+  border: 1px solid var(--dark-green);
+  /* border-image: linear-gradient(180deg, var(--dark-green), var(--black)) 1; */
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-green);
   padding: var(--spacing-xl);
@@ -445,11 +448,11 @@ img {
 
 /* === FOOTER === */
 .footer {
-  width: 100vw; /* full viewport width */
+  width: 100%; /* full viewport width */
   min-height: 147px;
   background: linear-gradient(180deg, var(--dark-green) 25%, #3DA86C 88%);
-  border-top: 1px solid;
-  border-image: linear-gradient(90deg, var(--dark-green), var(--black)) 1;
+  border-top: 1px solid var(--dark-green);
+  /* border-image: linear-gradient(90deg, var(--dark-green), var(--black)) 1; */
   padding: var(--spacing-2xl) var(--spacing-2xl) 8px;
   display: flex;
   flex-direction: column;
@@ -579,6 +582,8 @@ img {
   display: none;
   opacity: 0;
   transition: opacity 1s ease;
+  transform: scale(1.25);   
+  transform-origin: top center; 
 }
 
 .main-content.show {
