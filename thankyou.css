@@ -1,14 +1,11 @@
 /*
 ===========================================
-PROTIC Landing Page Styles (Revised)
+PROTIC Thank You Page Styles (Revised)
 Colors:
   Primary: #3BAE6D, #49D185, #87EBB3
   Dark Green: #06291E, #114B2A, #227D4A
   Background: #161616, #444444
   Text: #FFFFFF
-
-Grid Width: 412px (mobile-first)
-Fonts: Poppins (base), Dungeon (headings)
 ===========================================
 */
 
@@ -21,7 +18,6 @@ Fonts: Poppins (base), Dungeon (headings)
 
 /* === VARIABLES === */
 :root {
-  /* Colors */
   --primary-green: #3BAE6D;
   --light-green: #49D185;
   --lighter-green: #87EBB3;
@@ -29,51 +25,36 @@ Fonts: Poppins (base), Dungeon (headings)
   --dark-green: #06291E;
   --medium-dark-green: #114B2A;
   --medium-green: #227D4A;
-  --darker-green: #051A13;
-  --background-dark: #161616;
-  --background-darker: #444444;
-  --text-white: #FFFFFF;
-  --text-gray: rgba(255, 255, 255, 0.35);
   --black: #000000;
+  --background-dark: #161616;
+  --text-white: #FFFFFF;
+  --text-gray: rgba(255, 255, 255, 0.75);
 
-  /* Font Sizes */
-  --font-xs: 7px;
-  --font-sm: 8px;
-  --font-md: 10px;
-  --font-base: 11px;
-  --font-lg: 12px;
-  --font-xl: 13px;
-  --font-2xl: 14px;
-  --font-3xl: 15px;
-  --font-4xl: 20px;
-  --font-5xl: 24px;
-  --font-6xl: 40px;
+  --font-sm: 12px;
+  --font-md: 14px;
+  --font-lg: 16px;
+  --font-xl: 18px;
+  --font-2xl: 20px;
+  --font-3xl: 24px;
+  --font-4xl: 32px;
+  --font-5xl: 40px;
+  --font-6xl: 48px;
 
-  /* Spacing */
-  --spacing-xs: 6px;
   --spacing-sm: 8px;
   --spacing-md: 12px;
   --spacing-lg: 16px;
-  --spacing-xl: 18px;
-  --spacing-2xl: 24px;
-  --spacing-3xl: 32px;
-  --spacing-4xl: 40px;
-  --spacing-5xl: 48px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 40px;
+  --spacing-4xl: 48px;
 
-  /* Radius */
   --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 60px;
-  --radius-full: 137px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 40px;
 
-  /* Shadows */
-  --shadow-green: 0px 0px 27.3px rgba(48, 126, 82, 0.33);
-  --shadow-green-strong: 0px 0px 27.3px rgba(48, 126, 82, 0.43);
-  --shadow-hero: 0px 6px 69.3px rgba(3, 56, 26, 0.52),
-                 0px 1px 16.7px rgba(255, 255, 255, 0.15);
-  --shadow-button: 0px -1px 13.6px rgba(108, 184, 141, 0.43);
-  --shadow-glow: 0px 0px 7.6px rgba(48, 126, 82, 1);
+  --shadow-glow: 0px 0px 10px rgba(59, 174, 109, 0.6);
+  --shadow-button: 0px 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* === BASE === */
@@ -81,9 +62,9 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--background-dark);
   color: var(--text-white);
-  line-height: 1.5;
-  margin: 0; /* pastikan body nggak ada margin default */
-  padding: 0;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 768px;
   overflow-x: hidden;
 }
 
@@ -97,264 +78,167 @@ img {
   display: block;
 }
 
-.container {
-  width: 100%;
-  max-width: 412px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-
-/* Header Baru */
+/* === HEADER === */
 .header {
-  display: flex;              /* aktifkan flexbox */
-  justify-content: center;    /* center horizontal */
-  align-items: center;        /* center vertical */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;              
-  margin-top: 0;
-  margin: 0;       /* hapus margin */
-  padding: 0;      /* hapus padding */
-  position: relative;
-  top: 0;          /* pastikan nempel atas */
-  border: none;
-  box-shadow: none;
-  background: none;           /* pastikan tidak ada background dobel */
 }
 
 .header-image {
-  max-width: 100%;   /* biar responsif */
-  height: 100%;
+  width: 100%;
   height: auto;
   display: block;
-  margin: 0;       /* hapus margin */
-  padding: 0;      /* hapus padding */
-  position: relative;
-  top: 0;          /* pastikan nempel atas */
 }
 
-.header-image {
-  display: block;   /* hilangkan inline spacing */
-  margin: 0;
-  padding: 0;
+/* === THANK YOU SECTION === */
+.thankyou-section {
+  min-height: 80vh;
+  padding: var(--spacing-4xl) var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
-/* Thank You Section */
-
-  .thankyou-section {
-  padding: var(--spacing-5xl) var(--spacing-2xl); /* jarak dalam */
-  min-height: 400px; /* lebih natural, bisa disesuaikan */
-  height: auto;      /* biar mengikuti konten */
-  margin: 0;
-  padding: 0;
-}
-
-  
-  .thankyou-content {
-  padding: 0 var(--spacing-2xl);
+.thankyou-content {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-xl);
-  flex: 1;
-  justify-content: center;
-  z-index: 1;
-  }
-  
-  .thankyou-title {
-  font-family: 'Dungeon', serif;
-  font-size: var(--font-5xl);
-  font-weight: 400;
-  line-height: 27px;
   text-align: center;
-  }
-  
-  .thankyou-divider {
-  width: 344px;
-  height: 1px;
-  background: linear-gradient(90deg, var(--dark-green) 1.44%, var(--medium-green) 21.84%, var(--accent-green) 41.50%, var(--medium-green) 62.27%, var(--black) 91.61%);
-  box-shadow: var(--shadow-glow);
-  }
-  
-  .thankyou-text {
-  font-size: var(--font-xl);
-  font-weight: 400;
-  line-height: 21px;
-  text-transform: uppercase;
-  text-align: center;
-  }
-  
-  .thankyou-message {
-  width: 363px;
-  height: 92px;
-  background: linear-gradient(180deg, var(--medium-dark-green) 21.15%, var(--black) 100%);
-  border: 1px solid;
-  border-image: linear-gradient(180deg, var(--dark-green) 1.44%, var(--medium-green) 12.75%, var(--accent-green) 24.43%, var(--medium-green) 39.47%, #151515 87.33%) 1;
-  border-radius: var(--radius-md);
-  padding: var(--spacing-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  }
-  
-  .thankyou-message p {
-  font-size: var(--font-xl);
-  font-weight: 400;
-  line-height: 21px;
-  text-transform: uppercase;
-  text-align: center;
-  max-width: 337px;
-  }
-  
-.community-btn {
-  width: 200px; /* Wider for better text fit */
-  height: 40px;
-  border-radius: var(--radius-xl);
-  background: linear-gradient(180deg, var(--lighter-green) 0%, #23824C 100%);
-  border: 1px solid;
-  border-image: linear-gradient(180deg, var(--dark-green) 1.44%, var(--medium-green) 21.84%, var(--accent-green) 41.50%, var(--medium-green) 62.27%, var(--black) 91.61%) 1;
-  box-shadow: var(--shadow-button);
-  color: var(--text-white);
-  font-family: 'Poppins', sans-serif;
-  font-size: var(--font-base);
-  font-weight: 600;
-  line-height: 40px; /* Vertically center */
-  text-align: center;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  margin-bottom: 30px;
 }
 
-  
-  .community-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-button), 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .community-btn:focus {
-  outline: 2px solid var(--accent-green);
-  outline-offset: 2px;
-  }
-  
-  /* Responsive Design */
-  @media (min-width: 768px) {
-  .landing-page,
-  .main-content,
-  .registration-section,
-  .thankyou-section {
-  max-width: 768px;
-  }
-  
-  .division-row {
-  justify-content: center;
-  gap: var(--spacing-2xl);
-  }
-  
-  .form-input,
-  .file-upload {
-    max-width: 500px;
-    margin: 0 auto;
-  }
+.thankyou-title {
+  font-family: "Dungeon", serif;
+  font-size: var(--font-5xl);
+  font-weight: 400;
+}
+
+.thankyou-divider {
+  width: 60%;
+  max-width: 280px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--dark-green),
+    var(--accent-green),
+    var(--dark-green)
+  );
+  box-shadow: var(--shadow-glow);
+  margin: var(--spacing-md) auto;
+}
+
+.thankyou-text {
+  font-size: var(--font-lg);
+  font-weight: 400;
+  color: var(--text-gray);
+  text-transform: none;
+}
+
+/* Pesan Box */
+.thankyou-message {
+  max-width: 500px;
+  width: 100%;
+  background: linear-gradient(180deg, var(--medium-dark-green), var(--black));
+  border-radius: var(--radius-md);
+  border: 1px solid var(--medium-green);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  text-align: center;
+}
+
+.thankyou-message p {
+  font-size: var(--font-md);
+  line-height: 1.6;
+  color: var(--text-white);
+}
+
+/* Tombol Community */
+.community-btn {
+  min-width: 220px;
+  padding: 12px 24px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--lighter-green), #23824C);
+  border: none;
+  box-shadow: var(--shadow-button);
+  color: var(--text-white);
+  font-size: var(--font-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.community-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* === FOOTER === */
 .footer {
-  width: 100vw; /* full viewport width */
-  min-height: 147px;
-  background: linear-gradient(180deg, var(--dark-green) 25%, #3DA86C 88%);
-  border-top: 1px solid;
-  border-image: linear-gradient(90deg, var(--dark-green), var(--black)) 1;
-  padding: var(--spacing-2xl) var(--spacing-2xl) 8px;
+  width: 100%;
+  background: linear-gradient(180deg, var(--dark-green), #3DA86C);
+  border-top: 1px solid var(--dark-green);
+  padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 0; /* biar nempel ke viewport */
+  align-items: center;
+  gap: var(--spacing-lg);
 }
-
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--spacing-xl); /* tambah jarak antara text & sosmed */
+  width: 100%;
+  max-width: 600px;
 }
 
 .footer-main {
   display: flex;
-  gap: var(--spacing-lg);
   align-items: center;
+  gap: var(--spacing-md);
 }
 
 .footer-logo img {
-  width: 85px;
-  height: 95px;
-}
-
-.footer-text {
-  flex: 1;
+  width: 70px;
+  height: auto;
 }
 
 .footer-title {
-  font-family: 'Dungeon', serif;
-  font-size: var(--font-6xl);
+  font-family: "Dungeon", serif;
+  font-size: var(--font-3xl);
   font-weight: 400;
-  line-height: 45px;
-  margin-bottom: var(--spacing-xs);
 }
 
 .footer-subtitle {
-  font-size: var(--font-md);
-  font-weight: 400;
-  line-height: 15px;
+  font-size: var(--font-sm);
+  color: var(--text-gray);
 }
 
 .footer-divider {
   width: 1px;
-  height: 65px;
+  height: 50px;
   background: var(--text-white);
-  box-shadow: var(--shadow-glow);
 }
 
 .footer-social {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
 }
 
-.social-link img {
+.footer-social img {
   width: 20px;
   height: 20px;
 }
 
 .footer-copyright {
   font-size: var(--font-sm);
-  font-weight: 500;
-  line-height: 16px;
+  color: var(--text-gray);
   text-align: center;
-  margin-top: auto;
-  padding-bottom: 4px; /* biar nempel ke bawah */
-}
-
-@media (min-width: 1024px) {
-  .landing-page,
-  .main-content,
-  .registration-section,
-  .thankyou-section {
-    max-width: 1024px;
-  }
-
-  .intro-section {
-    padding: 0 var(--spacing-5xl);
-  }
-
-  .divisions-section {
-    padding: var(--spacing-5xl);
-  }
-
-  .registration-form {
-    padding: 0 var(--spacing-5xl);
-  }
 }

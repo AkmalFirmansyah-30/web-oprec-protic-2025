@@ -32,17 +32,17 @@
 
           <div class="form-group">
             <label for="npm" class="form-label">NPM</label>
-            <input type="text" id="npm" name="npm" class="form-input" required />
+            <input type="number" id="npm" name="npm" class="form-input" required />
           </div>
 
           <div class="form-group">
             <label for="class" class="form-label">Kelas</label>
-            <input type="text" id="class" name="class" class="form-input" required />
+            <input type="number" id="class" name="class" class="form-input" required />
           </div>
 
           <div class="form-group">
             <label for="semester" class="form-label">Semester</label>
-            <input type="text" id="semester" name="semester" class="form-input" required />
+            <input type="number" id="semester" name="semester" class="form-input" required />
           </div>
         </div>
 
@@ -119,7 +119,7 @@
           <div class="form-group">
             <label for="whatsapp" class="form-label">Nomor Whatsapp</label>
             <input
-              type="tel"
+              type="number"
               id="whatsapp"
               name="whatsapp"
               class="form-input"
@@ -135,7 +135,34 @@
 
           <div class="form-divider"></div>
 
-          <button type="submit" class="submit-btn">Kirim</button>
+          <button type="submit" id="submitBtn" class="submit-btn">
+            <span id="btnText">Kirim</span>
+            <span id="btnLoading" class="hidden">
+              <svg
+                class="spinner"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  class="path"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                ></circle>
+                <path
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 
+                    0 5.373 0 12h4zm2 5.291A7.962 
+                    7.962 0 014 12H0c0 3.042 1.135 
+                    5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              Memproses...
+            </span>
+          </button>
         </div>
       </form>
 
@@ -169,7 +196,8 @@
 
     <!-- SCRIPT -->
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbxPXP-SG8DzCrO-xe-j-eVgPndQYLILmJJl53G2R8bnclthyJ7pR0N65qgjhry-3yPNOg/exec'
+      const scriptURL =
+        'https://script.google.com/macros/s/AKfycbxPXP-SG8DzCrO-xe-j-eVgPndQYLILmJJl53G2R8bnclthyJ7pR0N65qgjhry-3yPNOg/exec'
       const form = document.getElementById('registrationForm')
 
       let selectedDivisions = []
@@ -194,39 +222,60 @@
       })
 
       form.addEventListener('submit', (e) => {
-        e.preventDefault()
+  e.preventDefault();
 
-        if (selectedDivisions.length !== 2) {
-          alert('Harap pilih tepat 2 divisi!')
-          return
+  if (selectedDivisions.length !== 2) {
+    alert('Harap pilih tepat 2 divisi!');
+    return;
+  }
+
+  const formData = {
+    fullname: form.fullname.value,
+    npm: form.npm.value,
+    class: form.class.value,
+    semester: form.semester.value,
+    division1: selectedDivisions[0],
+    division2: selectedDivisions[1],
+    portfolio: form.portfolio.value,
+    whatsapp: form.whatsapp.value,
+    email: form.email.value,
+  };
+
+  setLoading(true); // aktifkan loading
+
+  fetch(scriptURL, {
+    method: 'POST',
+    body: JSON.stringify(formData),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      window.location.href = 'thankyou.html';
+    })
+    .catch((err) => {
+      console.error('Error!', err.message);
+      alert('Terjadi kesalahan, coba lagi!');
+    })
+    .finally(() => {
+      setLoading(false); // matikan loading kalau gagal
+    });
+});
+
+      const submitBtn = document.getElementById("submitBtn");
+      const btnText = document.getElementById("btnText");
+      const btnLoading = document.getElementById("btnLoading");
+
+      function setLoading(loading) {
+        if (loading) {
+          submitBtn.disabled = true;
+          btnText.classList.add("hidden");
+          btnLoading.classList.remove("hidden");
+        } else {
+          submitBtn.disabled = false;
+          btnText.classList.remove("hidden");
+          btnLoading.classList.add("hidden");
         }
+      }
 
-        const formData = {
-          fullname: form.fullname.value,
-          npm: form.npm.value,
-          class: form.class.value,
-          semester: form.semester.value,
-          division1: selectedDivisions[0],
-          division2: selectedDivisions[1],
-          portfolio: form.portfolio.value,
-          whatsapp: form.whatsapp.value,
-          email: form.email.value,
-        }
-
-        fetch(scriptURL, {
-          method: 'POST',
-          body: JSON.stringify(formData),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            alert('Data berhasil dikirim!')
-            form.reset()
-            selectedDivisions = []
-            document.querySelectorAll('.division-btn').forEach((b) => b.classList.remove('active'))
-          })
-          .catch((err) => console.error('Error!', err.message))
-      })
     </script>
-
   </body>
 </html>
